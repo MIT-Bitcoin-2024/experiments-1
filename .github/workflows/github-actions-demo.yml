@@ -17,6 +17,6 @@ jobs:
           ls ${{ github.workspace }}
       - name: Download an image
         run: |
-          curl -L https://nft-cdn.alchemy.com/matic-mainnet/08f038899c956d96c4317d4ca3b716cf -o ${{ github.workspace }}/image.jpg
+          curl -L https://github.com/MIT-Bitcoin-2024/lightning-bounty/blob/main/assets/img/projectLogo1.png -o ${{ github.workspace }}/image.jpg
       - run: echo "🖼️ Image has been downloaded to the runner workspace."
       - run: echo "🍏 This job's status is ${{ job.status }}."
