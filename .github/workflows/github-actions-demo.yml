@@ -15,16 +15,4 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Download an image
-        run: |
-          curl -L https://github.com/MIT-Bitcoin-2024/lightning-bounty/raw/main/assets/img/projectLogo1.png -o ${{ github.workspace }}/projectLogo1.png
-      - run: echo "🖼️ Image has been downloaded to the runner workspace."
-      - name: Display file details
-        run: |
-          ls -l ${{ github.workspace }}/projectLogo1.png
-      - name: Upload image as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: project-logo
-          path: ${{ github.workspace }}/projectLogo1.png
       - run: echo "🍏 This job's status is ${{ job.status }}."
