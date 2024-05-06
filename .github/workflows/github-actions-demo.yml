@@ -5,26 +5,16 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - name: Download an image
+      - name: Download and Display Image in PR Comment
         run: |
           curl -L https://github.com/MIT-Bitcoin-2024/lightning-bounty/raw/main/assets/img/projectLogo1.png -o ${{ github.workspace }}/projectLogo1.png
-      - run: echo "🖼️ Image has been downloaded to the runner workspace."
-      - name: Display file details
-        run: |
-          ls -l ${{ github.workspace }}/projectLogo1.png
-      - name: Upload image as an artifact
-        uses: actions/upload-artifact@v3
+      - name: Post Image in Comment
+        uses: peter-evans/create-or-update-comment@v2
         with:
-          name: project-logo
-          path: ${{ github.workspace }}/projectLogo1.png
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🖼️ Here's the project logo! 
+            ![Project Logo](${{ github.server_url }}/${{ github.repository }}/raw/${{ github.ref }}/path/to/image.png)
+          token: ${{ secrets.GITHUB_TOKEN }}
