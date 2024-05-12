@@ -19,6 +19,7 @@ jobs:
         run: |
           curl -L https://github.com/MIT-Bitcoin-2024/lightning-bounty/raw/main/assets/img/projectLogo1.png -o ${{ github.workspace }}/projectLogo1.png
       - run: echo "🖼️ Image has been downloaded to the runner workspace."
+      - run: echo "Enrique was here on May 12"
       - name: Display file details
         run: |
           ls -l ${{ github.workspace }}/projectLogo1.png
