@@ -1,5 +1,3 @@
-# ENRIQUE WAS HERE 🧑‍🏭
-## ENRIQUE WAS HERE2 🧑‍🏭🧑‍🏭
-
-LB rock 🪨
-LB rocks2
+Lightning Bounties LLC ⚡
+https://beta.lightningbounties.com/
+Transforming software development collaboration
